@@ -1,0 +1,60 @@
+--------------------------------------------------------------------------------
+
+0. Install Homebrew
+http://brew.sh/$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+--------------------------------------------------------------------------------
+
+1. Install qt4
+https://github.com/cartr/homebrew-qt4
+
+$ brew tap cartr/qt4
+$ brew tap-pin cartr/qt4
+$ brew install qt
+
+--------------------------------------------------------------------------------
+
+2. To build the graphics server
+$ cd cs106lib-0.3.1/gserv
+$ qmake-qt4 gserv.pro -r
+$ make
+
+The result will be a gserv.app in the same folder.
+Open that to start the graphics server.
+
+--------------------------------------------------------------------------------
+
+3. To build the CS106B libraries
+$ cd cs106lib-0.3.1/CS106
+$ make
+
+The result will be a cs106lib.a file in the same folder.
+
+--------------------------------------------------------------------------------
+
+Usage
+_____
+
+When creating a new xcode project.
+
+Create a blank mac project (commandline).
+
+Depending on the assignment, look in cs106lib-0.3.1/assign/
+
+1. Do A or B.
+
+A. If there's a matching assignment in that folder,
+
+drag all the .h files (ignore files in private/) into Xcode.
+
+Otherwise go to [B].
+
+B. Drag all the files from "Default Stanford Headers" into Xcode.
+
+2. Drag the cs106lib.a file [Made in step 3] into Xcode.
+
+Project should be ready for building.
+
+--------------------------------------------------------------------------------
+Read https://sourceforge.net/projects/progabstrlib/files/?source=navbar for more.
+--------------------------------------------------------------------------------
