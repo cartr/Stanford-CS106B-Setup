@@ -13,7 +13,7 @@
 #include <cstdlib>
 #include <iostream>
 
-ErrorException::ErrorException(string m="unspecified custom error") 
+ErrorException::ErrorException(string m)
 : msg(m) {
 }
 
