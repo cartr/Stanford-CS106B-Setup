@@ -100,6 +100,12 @@ bool Socket::accept ( Socket& new_socket ) const
     return true;
 }
 
+// MSG_NOSIGNAL does not exists on OS X
+#if defined(__APPLE__) || defined(__MACH__)
+# ifndef MSG_NOSIGNAL
+#   define MSG_NOSIGNAL SO_NOSIGPIPE
+# endif
+#endif
 
 bool Socket::send ( const std::string s ) const
 {
