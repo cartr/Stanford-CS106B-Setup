@@ -13,12 +13,14 @@ https://github.com/cartr/homebrew-qt4
 $ brew tap cartr/qt4
 $ brew tap-pin cartr/qt4
 $ brew install qt
+$ which qt # This should return a path.
 
 --------------------------------------------------------------------------------
 
 2. To build the graphics server
+
 $ cd cs106lib-0.3.1/gserv
-$ qmake-qt4 gserv.pro -r
+$ qmake gserv.pro -r
 $ make
 
 The result will be a gserv.app in the same folder.
